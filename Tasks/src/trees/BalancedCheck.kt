@@ -13,7 +13,7 @@ class BalancedCheck {
 		if (root == null) return -1
 		
 		val leftHeight = checkBalanced(root.left)
-		if (leftHeight == Int.MIN_VALUE) return Int. MIN_VALUE
+		if (leftHeight == Int.MIN_VALUE) return Int.MIN_VALUE
 		
 		val rightHeight = checkBalanced(root.right)
 		if (rightHeight == Int.MIN_VALUE) return Int. MIN_VALUE
