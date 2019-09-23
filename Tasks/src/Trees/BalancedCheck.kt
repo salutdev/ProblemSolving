@@ -3,7 +3,7 @@ package Trees
 class BalancedCheck {
 	
 	fun isTeeBalanced() {
-		val root = Tree().getExampleTree2()
+		val root = Tree.getExampleTree2()
 		val result = checkBalanced(root)
 		println(if (result != Int.MIN_VALUE) "Balanced" else "Not balanced")
 	}
@@ -26,7 +26,7 @@ class BalancedCheck {
 	}
 	
 	fun isTeeBalanced2() {
-		val root = Tree().getExampleTree2()
+		val root = Tree.getExampleTree2()
 		println(if (isBalanced2(root)) "Balanced" else "Not balanced")
 	}
 	

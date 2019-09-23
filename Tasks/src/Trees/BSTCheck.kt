@@ -4,9 +4,9 @@ class BSTCheck {
 	
 	fun check() {
 		
-		val root: TreeNode = Tree().getExampleTree1()
+		val root: TreeNode = Tree.getExampleTree1()
 		val n = getNumberOfNodesPostorder(root)
-		var ar = Array<Int>(n, { i -> 0 })  // arrayOf<Int>(12, 12 ,12)
+		var ar = Array<Int>(n) { 0 }  // arrayOf<Int>(12, 12 ,12)
 		ar[0] = 10
 		
 		println(n)

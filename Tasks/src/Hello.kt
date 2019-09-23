@@ -4,11 +4,14 @@ import Combinatorics.Subsets
 import Trees.BalancedCheck
 import Trees.BSTCheck
 import Trees.CommonAncestor
+import Trees.MaxPathSum
 
 fun main(args: Array<String>) {
 	
-	CommonAncestor().getAncestor()
-	
+	//CommonAncestor().getAncestor()
+
+	MaxPathSum.getMaxPathSum()
+
 
 //	
 //	val numbers: MutableList<Int> = mutableListOf(5, 10, 18)

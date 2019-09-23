@@ -3,7 +3,7 @@ package Trees
 class CommonAncestor {
 	
 	fun getAncestor() {
-		val root = Tree().getExampleTree1()
+		val root = Tree.getExampleTree1()
 		
 		val node1 = findNode(root, 1)
 		val node2 = findNode(root, 58)
