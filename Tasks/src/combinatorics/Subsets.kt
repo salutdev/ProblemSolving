@@ -1,4 +1,4 @@
-package Combinatorics
+package combinatorics
 
 class Subsets {
 	

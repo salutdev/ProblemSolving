@@ -1,10 +1,4 @@
-import General.TicTacToe
-import Combinatorics.Permutations
-import Combinatorics.Subsets
-import Trees.BalancedCheck
-import Trees.BSTCheck
-import Trees.CommonAncestor
-import Trees.MaxPathSum
+import trees.MaxPathSum
 
 fun main(args: Array<String>) {
 	
