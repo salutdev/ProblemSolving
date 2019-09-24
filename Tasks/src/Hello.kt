@@ -1,14 +1,15 @@
+<<<<<<< HEAD
 import dynamic.EditDistance
 import dynamic.LCS
 import dynamic.LCSubstring
 import trees.MaxPathSum
+=======
+import searchAndSort.BinarySearchInRotatedArray
+>>>>>>> task
 
 fun main(args: Array<String>) {
-	
-	//CommonAncestor().getAncestor()
 
-	LCSubstring.calc()
-
+	BinarySearchInRotatedArray.calc()
 
 //	
 //	val numbers: MutableList<Int> = mutableListOf(5, 10, 18)
