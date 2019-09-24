@@ -1,12 +1,10 @@
-import dynamic.EditDistance
-import dynamic.LCS
-import trees.MaxPathSum
+import searchAndSort.BinarySearchInRotatedArray
 
 fun main(args: Array<String>) {
 	
 	//CommonAncestor().getAncestor()
 
-	EditDistance.calc()
+	BinarySearchInRotatedArray.calc()
 
 
 //	
