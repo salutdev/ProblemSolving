@@ -1,10 +1,12 @@
+import dynamic.EditDistance
+import dynamic.LCS
 import trees.MaxPathSum
 
 fun main(args: Array<String>) {
 	
 	//CommonAncestor().getAncestor()
 
-	MaxPathSum.getMaxPathSum()
+	EditDistance.calc()
 
 
 //	
