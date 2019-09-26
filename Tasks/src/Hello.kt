@@ -1,9 +1,10 @@
 import searchAndSort.BinarySearch
 import searchAndSort.BinarySearchInRotatedArray
+import searchAndSort.MergeSort
 
 fun main(args: Array<String>) {
 
-	BinarySearch().find()
+	MergeSort().mergeSort()
 
 //	
 //	val numbers: MutableList<Int> = mutableListOf(5, 10, 18)
