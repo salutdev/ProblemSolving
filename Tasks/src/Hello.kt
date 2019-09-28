@@ -7,7 +7,7 @@ import trees.TreeNode
 
 fun main(args: Array<String>) {
 
-	Practice().bstCheck()
+	Practice().balancedCheck()
 }
 
 
