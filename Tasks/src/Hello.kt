@@ -1,8 +1,9 @@
+import dynamic.Knapsack
 import general.Practice
 
 fun main(args: Array<String>) {
 
-	Practice().printAllPermutationsWithDups()
+	Knapsack().calcMaxValue()
 }
 
 
