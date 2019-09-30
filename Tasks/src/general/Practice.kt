@@ -7,6 +7,73 @@ import kotlin.math.max
 
 class Practice {
 
+    fun commonAncestor() {
+        val root = Tree.getExampleTree1()
+        val p = getNodeByVal(root,2)
+        //val q = getNodeByVal(root,13)
+
+        //val p = TreeNode(4)
+        val q = TreeNode(13)
+
+        val result = commonAncestorHelper(root, p, q)
+        val resStr = if (result!!.isAncestor) result?.node?.value else "No common ancestor"
+
+        println(resStr)
+
+    }
+
+    private fun commonAncestorHelper(root: TreeNode?, p: TreeNode?, q: TreeNode?): Result? {
+        if (root == null) return Result(null, false)
+        if (root == p && root == q) return Result(root, true)
+
+        val lRes = commonAncestorHelper(root?.left, p, q)
+        if (lRes != null && lRes.isAncestor) return lRes
+
+        val rRes = commonAncestorHelper(root?.right, p, q)
+        if (rRes != null && rRes.isAncestor) return rRes
+
+        if (lRes?.node != null && rRes?.node != null) return Result(root, true)
+
+        if (p == root || q == root) {
+            return if (lRes?.node != null || rRes?.node != null) Result(root, true) else Result(root, false)
+        }
+
+        return if (lRes?.node != null) Result(lRes?.node, false) else Result(rRes?.node, false)
+    }
+
+    private fun getNodeByVal(root: TreeNode?, value: Int): TreeNode? {
+        if (root == null) return null
+        if (root.value == value) return root
+        val lNode = getNodeByVal(root.left, value)
+        if (lNode != null) return lNode
+        return getNodeByVal(root.right, value)
+    }
+
+    data class Result(val node: TreeNode?, val isAncestor: Boolean)
+
+    fun commonAncestorInBST() {
+        val root = Tree.getExampleTree1()
+        val v1 = 20
+        val v2 = 13
+        var commonAncestor: TreeNode? = null
+        var node: TreeNode? = root
+
+        while(node != null) {
+            if ((v1 < node.value && v2 > node.value) ||
+                (v2 < node.value && v1 > node.value) ||
+                node.value == v1 || node.value == v2) {
+                commonAncestor = node
+                break
+            } else if (v1 < node.value && v2 < node.value) {
+                node = node.left
+            } else if (v1 > node.value && v2 > node.value) {
+                node = node.right
+            }
+        }
+
+        println(commonAncestor?.value)
+    }
+
     fun printAllPermutationsWithDups() {
         var str = "abb"
         val map = buildMap(str)
