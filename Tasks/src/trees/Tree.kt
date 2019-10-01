@@ -80,7 +80,7 @@ class Tree {
          */
             val root: TreeNode = TreeNode(-15)
             root.left = TreeNode(-6)
-            root.right = TreeNode(-42)
+           giafdsf root.right = TreeNode(-42)
 
 //        root.left?.left = TreeNode(4)
 //        root.left?.right = TreeNode(9)
