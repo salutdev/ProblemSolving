@@ -1,11 +1,9 @@
-import BitLogic.PowerOf2
-import NumberTheory.SieveOfEratosthenes
-import general.Practice
-import trees.MinHeight
+import bitLogic.PowerOf2
+import linkedLists.MergeSort
 
 fun main(args: Array<String>) {
 
-	PowerOf2().ifPowerOf2()
+	MergeSort().mergeSort()
 }
 
 

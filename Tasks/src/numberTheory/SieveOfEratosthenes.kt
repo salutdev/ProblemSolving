@@ -1,6 +1,5 @@
-package NumberTheory
+package numberTheory
 
-import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
 class SieveOfEratosthenes {

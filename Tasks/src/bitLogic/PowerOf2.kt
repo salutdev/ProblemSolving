@@ -1,4 +1,4 @@
-package BitLogic
+package bitLogic
 
 class PowerOf2 {
     fun ifPowerOf2() {
