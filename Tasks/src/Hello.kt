@@ -1,6 +1,7 @@
 import general.Swap2Numbers
+import trees.SpecificSumExists
 
 fun main(args: Array<String>) {
 
-	Swap2Numbers().swap2()
+	SpecificSumExists().find()
 }
