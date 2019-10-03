@@ -1,11 +1,6 @@
-import bitLogic.PowerOf2
-import bitLogic.Swap2Numbers
-import dynamic.SubsetSum
-import linkedLists.MergeSort
-import searchAndSort.QuickSort
-import trees.SubtreeCheck
+import general.Swap2Numbers
 
 fun main(args: Array<String>) {
 
-	Swap2Numbers().swap()
+	Swap2Numbers().swap2()
 }
