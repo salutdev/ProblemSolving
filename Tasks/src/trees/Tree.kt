@@ -37,6 +37,39 @@ class Tree {
             return root
         }
 
+        public fun getExampleTree4(): TreeNode {
+            /*                 20
+             *              /      \
+             *            13        44
+             *           /  \      /   \
+             *         4      17  25   58
+             *        / \    / \
+             *       2   8  15 19
+             *      / \
+ 			 *     1   3
+             */
+            val root: TreeNode = TreeNode(44)
+            root.left = TreeNode(25)
+            root.right = TreeNode(58)
+
+//            root.left?.left = TreeNode(4)
+//            root.left?.right = TreeNode(17)
+//
+//            root.left?.left?.left = TreeNode(2)
+//            root.left?.left?.right = TreeNode(8)
+//
+//            root.left?.left?.left?.left = TreeNode(1)
+//            root.left?.left?.left?.right = TreeNode(3)
+//
+//            root.left?.right?.left = TreeNode(15)
+//            root.left?.right?.right = TreeNode(19)
+//
+//            root.right?.left = TreeNode(25)
+//            root.right?.right = TreeNode(58)
+
+            return root
+        }
+
         public fun getExampleTree2(): TreeNode {
             /*                 15
              *            /        \
