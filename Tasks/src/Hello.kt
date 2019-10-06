@@ -12,4 +12,6 @@ import trees.SpecificSumExists
 fun main(args: Array<String>) {
 
 	DFS().traverse()
+	println()
+	DFS().traverseIterative()
 }
