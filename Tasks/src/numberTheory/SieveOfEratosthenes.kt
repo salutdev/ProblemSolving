@@ -4,7 +4,7 @@ import kotlin.math.sqrt
 
 class SieveOfEratosthenes {
     fun printPrimeNumbers() {
-        val n = 100
+        val n = 200
         val ar = Array<Boolean>(n+1) {true}
 
         for (i in 2..sqrt(n.toDouble()).toInt()) {
