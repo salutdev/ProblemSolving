@@ -1,6 +1,7 @@
 import dynamic.LongestPalindromicSubsequece
 import dynamic.LongestPalindromicSubstring
 import general.Swap2Numbers
+import graphs.BFS
 import graphs.DFS
 import numberTheory.SegmentedSieve
 import numberTheory.SieveOfEratosthenes
@@ -11,7 +12,9 @@ import trees.SpecificSumExists
 
 fun main(args: Array<String>) {
 
-	DFS().traverse()
+	BFS().traverse()
 	println()
 	DFS().traverseIterative()
+	println()
+	BFS().traverse()
 }
