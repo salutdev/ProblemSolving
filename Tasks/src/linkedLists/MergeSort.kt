@@ -2,14 +2,9 @@ package linkedLists
 
 class MergeSort {
     fun mergeSort() {
-        var head = LinkedListNode(5)
-        head.next = LinkedListNode(3)
-        head.next?.next = LinkedListNode(1)
-        head.next?.next?.next = LinkedListNode(19)
-        head.next?.next?.next?.next = LinkedListNode(14)
-        head.next?.next?.next?.next?.next = LinkedListNode(6)
-        head.next?.next?.next?.next?.next?.next = LinkedListNode(17)
-        head.next?.next?.next?.next?.next?.next?.next = LinkedListNode(9)
+
+        var linkedList = LinkedList.getExample()
+        var head = linkedList.head
 
         val sortedList = sort(head)
         var node = sortedList
