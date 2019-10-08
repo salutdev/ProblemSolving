@@ -1,6 +1,9 @@
 import linkedLists.Reverse
+import trees.Serialization
 
 fun main(args: Array<String>) {
 
-	Reverse().getRerversedHead()
+	Serialization().serialize()
+	println()
+	Serialization().deserialize()
 }
