@@ -1,6 +1,6 @@
 package trees
 
-class Serialization {
+class SerializationOfNaryTree {
     fun serialize() {
         val root = NaryTree.getExampleTee()
         serialize(root)

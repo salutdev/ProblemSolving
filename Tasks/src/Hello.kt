@@ -1,9 +1,9 @@
-import linkedLists.Reverse
-import trees.Serialization
+import trees.SerializationOfBinaryTree
+import trees.SerializationOfNaryTree
 
 fun main(args: Array<String>) {
 
-	Serialization().serialize()
+	SerializationOfBinaryTree().serialize()
 	println()
-	Serialization().deserialize()
+	SerializationOfBinaryTree().deserialize()
 }
