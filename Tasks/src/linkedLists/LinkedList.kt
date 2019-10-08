@@ -17,5 +17,18 @@ class LinkedList(var head: LinkedListNode?) {
 
             return LinkedList(head)
         }
+
+        fun getExample2(): LinkedList? {
+            var head = LinkedListNode(5)
+            head.next = LinkedListNode(3)
+            head.next?.next = LinkedListNode(1)
+            head.next?.next?.next = LinkedListNode(18)
+            head.next?.next?.next?.next = LinkedListNode(18)
+            head.next?.next?.next?.next?.next = LinkedListNode(1)
+            head.next?.next?.next?.next?.next?.next = LinkedListNode(3)
+            head.next?.next?.next?.next?.next?.next?.next = LinkedListNode(5)
+
+            return LinkedList(head)
+        }
     }
 }

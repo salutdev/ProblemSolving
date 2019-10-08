@@ -1,9 +1,6 @@
-import trees.SerializationOfBinaryTree
-import trees.SerializationOfNaryTree
+import linkedLists.IsPalindrome
 
 fun main(args: Array<String>) {
 
-	SerializationOfBinaryTree().serialize()
-	println()
-	SerializationOfBinaryTree().deserialize()
+	IsPalindrome().check()
 }
