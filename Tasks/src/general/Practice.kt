@@ -7,6 +7,34 @@ import kotlin.math.max
 
 class Practice {
 
+    fun subset() {
+        val array = arrayOf(4, 8, 12)
+        val max = 1 shl array.size
+
+        for (i in 0 until max) {
+
+            val combination = getCombination(array, i)
+            combination.forEach { print("$it, ")}
+            println()
+        }
+    }
+
+    private fun getCombination(array: Array<Int>, i: Int): List<Int> {
+        var k = i
+        var index = 0
+        val combination = mutableListOf<Int>()
+        while(k > 0) {
+            if (k and 1 == 1) {
+                combination.add(array[index])
+            }
+
+            index++
+            k = k shr 1
+        }
+
+        return combination
+    }
+
     fun commonAncestor() {
         val root = Tree.getExampleTree1()
         val p = getNodeByVal(root,2)
