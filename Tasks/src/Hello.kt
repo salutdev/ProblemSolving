@@ -1,9 +1,7 @@
-import numberTheory.GCD_Euclidean
-import trees.BottomView
-import trees.TopView
+import numberTheory.Extended_Euclidean
 
 fun main(args: Array<String>) {
 
-    BottomView().find()
+    Extended_Euclidean().calc()
 
 }
