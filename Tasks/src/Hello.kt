@@ -1,7 +1,7 @@
-import general.Practice
-import linkedLists.IsPalindrome
+import numberTheory.GCD_Euclidean
 
 fun main(args: Array<String>) {
 
-	Practice().subset()
+    GCD_Euclidean().calc()
+
 }
