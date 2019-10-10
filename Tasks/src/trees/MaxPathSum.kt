@@ -4,7 +4,7 @@ class MaxPathSum {
 
     companion object {
         fun getMaxPathSum() {
-            val root = Tree.getExampleTree3()
+            val root = Tree.getExampleTree1()
             val result = Result(Int.MIN_VALUE)
             getMaxPathSum(root, result);
             println(result.value)

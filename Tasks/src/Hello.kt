@@ -1,7 +1,8 @@
 import numberTheory.GCD_Euclidean
+import trees.TopView
 
 fun main(args: Array<String>) {
 
-    GCD_Euclidean().calc()
+    TopView().find()
 
 }

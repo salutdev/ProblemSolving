@@ -5,7 +5,7 @@ import kotlin.math.min
 
 class MinHeight {
     fun find() {
-        val root = Tree.getExampleTree3()
+        val root = Tree.getExampleTree1()
         val height = minHeight(root)
         println(height)
     }

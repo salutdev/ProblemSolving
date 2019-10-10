@@ -4,7 +4,7 @@ import kotlin.math.max
 
 class MaxHeight {
     fun find() {
-        val root = Tree.getExampleTree3()
+        val root = Tree.getExampleTree1()
         println(height((root)))
     }
 

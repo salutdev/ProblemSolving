@@ -102,34 +102,44 @@ class Tree {
             return root
         }
 
-        public fun getExampleTree3(): TreeNode {
+        public fun getExampleTree3(): TreeNodeWithHd {
         /*                15
-         *            /        \
-         *           6          42
-         *         /  \        /   \
-         *      4     9       33     55
-         *     / \   / \     /  \    / \
-         *    3   5 7   11  24  38  51  70
+         *              /          \
+         *            6             42
+         *          /   \          /   \
+         *        34      9       33     55
+         *              / \     /  \    / \
+         *            7   11  24  38  51  70
+         *           /
+         *        18
+         *       /
+         *     13
+         *    /
+         *   4
+         *
          */
-            val root: TreeNode = TreeNode(-15)
-            root.left = TreeNode(-6)
-            root.right = TreeNode(-42)
+            val root: TreeNodeWithHd = TreeNodeWithHd(15)
+            root.left = TreeNodeWithHd(6)
+            root.right = TreeNodeWithHd(42)
 
-//        root.left?.left = TreeNode(4)
-//        root.left?.right = TreeNode(9)
-//
-//        root.right?.left = TreeNode(33)
-//        root.right?.right = TreeNode(55)
-//
-//        root.left?.left?.left = TreeNode(3)
-//        root.left?.left?.right = TreeNode(5)
-//        root.left?.right?.left = TreeNode(7)
-//        root.left?.right?.right = TreeNode(11)
-//
-//        root.right?.left?.left = TreeNode(24)
-//        root.right?.left?.right = TreeNode(38)
-//        root.right?.right?.left = TreeNode(51)
-//        root.right?.right?.right = TreeNode(70)
+            root.left?.left = TreeNodeWithHd(34)
+
+            root.left?.right = TreeNodeWithHd(9)
+
+            root.right?.left = TreeNodeWithHd(33)
+            root.right?.right = TreeNodeWithHd(55)
+
+            root.left?.right?.left = TreeNodeWithHd(7)
+            root.left?.right?.right = TreeNodeWithHd(11)
+
+            root.right?.left?.left = TreeNodeWithHd(24)
+            root.right?.left?.right = TreeNodeWithHd(38)
+            root.right?.right?.left = TreeNodeWithHd(51)
+            root.right?.right?.right = TreeNodeWithHd(70)
+
+            root.left?.right?.left?.left = TreeNodeWithHd(18)
+            root.left?.right?.left?.left?.left = TreeNodeWithHd(13)
+            root.left?.right?.left?.left?.left?.left = TreeNodeWithHd(4)
 
             return root
         }
