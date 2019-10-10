@@ -1,0 +1,30 @@
+Boolean satisfiability problem
+
+Boolean satisfiability problem is NP-complete
+
+
+2-SAT is a special case of Boolean Satisfiability Problem and can be solved
+in polynomial time.
+
+CNF : CNF is a conjunction (AND) of clauses, where every clause is a disjunction (OR).
+
+Now, 2-SAT limits the problem of SAT to only those Boolean formula which are expressed as a CNF with every clause
+having only 2 terms(also called 2-CNF).
+
+Example: F = (A1 or B1) and (A2 or B2) and (A3 or B3) and ....... and (Am or Bm)
+
+Thus, Problem of 2-Satisfiabilty can be stated as:
+
+Given CNF with each clause having only 2 terms, is it possible to assign such values to the variables so that the CNF is TRUE?
+
+Input : F = (x1 or x2) and (x2 or not x1) and (not x1 ir not x2)
+Output : The given expression is satisfiable.
+         (for x1 = FALSE, x2 = TRUE)
+
+Input : F = (x1 or x2) and (x2 or not x1) and (x1 or not x2) and (not x1 or not x2})
+Output : The given expression is unsatisfiable.
+         (for all possible combinations of x1 and x2)
+
+(x or y) and not x
+
+Is it possible to make this expression true ?
