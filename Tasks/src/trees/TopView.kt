@@ -12,7 +12,7 @@ class TopView {
 
         traverse(root, map, queue)
 
-        map.values.forEach {
+        map.toSortedMap().values.forEach {
             print("${it.value}, ")
         }
     }
