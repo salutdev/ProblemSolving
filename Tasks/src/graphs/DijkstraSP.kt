@@ -26,13 +26,14 @@ class DijkstraSP {
             node.edges?.forEach { e ->
                 val childNode = e.to
 
-                if (childNode?.distanceFromSource == Int.MAX_VALUE) {
-                    pq.add(childNode)
-                }
-
                 if (node.distanceFromSource + e.weight < childNode!!.distanceFromSource) {
                     childNode.distanceFromSource = node.distanceFromSource + e.weight
                     childNode.lastEdgeWithShortestPath = e
+
+                    if (pq.contains(childNode)) {
+                        pq.remove(childNode)  // Reorder pq as key changes (doesn't automatically reoder qp when key changed)
+                    }
+                    pq.add(childNode)
                 }
             }
         }

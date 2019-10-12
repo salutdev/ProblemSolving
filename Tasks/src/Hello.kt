@@ -3,6 +3,6 @@ import trees.LeftView
 
 fun main(args: Array<String>) {
 
-    LeftView().find()
+    DijkstraSP().calc()
 
 }
