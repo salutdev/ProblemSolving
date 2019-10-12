@@ -1,7 +1,7 @@
-import numberTheory.Extended_Euclidean
+import graphs.DijkstraSP
 
 fun main(args: Array<String>) {
 
-    Extended_Euclidean().calc()
+    DijkstraSP().calc()
 
 }
