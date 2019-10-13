@@ -4,6 +4,7 @@ class DiGraphNode(val value: Int) {
 
     var distanceFromSource: Int = Int.MAX_VALUE
     var lastEdgeWithShortestPath: DirectedEdge? = null
+    var visited = false
 
     var edges: ArrayList<DirectedEdge>? = null
 

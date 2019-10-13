@@ -80,5 +80,45 @@ class EdgeWeightedDiGraph {
 
             return graph
         }
+
+        // For topological sort
+        fun getExampleGraph2(): EdgeWeightedDiGraph {
+
+            val graph = EdgeWeightedDiGraph()
+
+            val node0 = DiGraphNode(0)
+            val node1 = DiGraphNode(1)
+            val node2 = DiGraphNode(2)
+            val node3 = DiGraphNode(3)
+            val node4 = DiGraphNode(4)
+            val node5 = DiGraphNode(5)
+            val node6 = DiGraphNode(6)
+
+            graph.addNode(node0)
+            graph.addNode(node1)
+            graph.addNode(node2)
+            graph.addNode(node3)
+            graph.addNode(node4)
+            graph.addNode(node5)
+            graph.addNode(node6)
+
+            node0.addEdge(DirectedEdge(node0, node1, 1))
+            node0.addEdge(DirectedEdge(node0, node2, 1))
+            node0.addEdge(DirectedEdge(node0, node5, 1))
+
+            node1.addEdge(DirectedEdge(node1, node4, 1))
+
+            node3.addEdge(DirectedEdge(node3, node2, 1))
+            node3.addEdge(DirectedEdge(node3, node4, 1))
+            node3.addEdge(DirectedEdge(node3, node5, 1))
+            node3.addEdge(DirectedEdge(node3, node6, 1))
+
+            node5.addEdge(DirectedEdge(node5, node2, 1))
+
+            node6.addEdge(DirectedEdge(node6, node0, 1))
+            node6.addEdge(DirectedEdge(node6, node4, 1))
+
+            return graph
+        }
     }
 }
