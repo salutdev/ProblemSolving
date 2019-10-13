@@ -1,9 +1,10 @@
 import graphs.DijkstraSP
 import graphs.TopologicalSort
+import numberTheory.ModuloExponentiation
 import trees.LeftView
 
 fun main(args: Array<String>) {
 
-    TopologicalSort().calc()
-
+    ModuloExponentiation().calc()
+    ModuloExponentiation().calc2()
 }
