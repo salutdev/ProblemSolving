@@ -2,7 +2,7 @@ package graphs
 
 class DiGraphNode(val value: Int) {
 
-    var distanceFromSource: Int = Int.MAX_VALUE
+    var distanceFromSource: Double = Double.MAX_VALUE
     var lastEdgeWithShortestPath: DirectedEdge? = null
     var visited = false
 
