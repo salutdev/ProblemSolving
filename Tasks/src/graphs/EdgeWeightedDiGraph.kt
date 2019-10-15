@@ -3,22 +3,12 @@ package graphs
 class EdgeWeightedDiGraph {
 
     val nodes = ArrayList<DiGraphNode>()
-    var v: Int = 0
-            get() = this.nodes.count() // Number of vertices
-
-    //val edges = mutableMapOf<DiGraphNode, ArrayList<DirectedEdge>>()
+//    var v: Int = 0
+//            get() = this.nodes.count() // Number of vertices
 
     fun addNode(node: DiGraphNode) {
         nodes.add(node)
     }
-
-//    fun addEdge(from: DiGraphNode, to: DiGraphNode, weight: Int) {
-//        val edge = DirectedEdge(from, to, weight)
-//        if (!edges.containsKey(from)) {
-//            edges[from]= ArrayList<DirectedEdge>()
-//        }
-//        edges[from]?.add(edge)
-//    }
 
     companion object {
         fun getExampleGraph(): EdgeWeightedDiGraph {
@@ -183,6 +173,35 @@ class EdgeWeightedDiGraph {
             node7.addEdge(DirectedEdge(node7, node2, 0.34))
             node7.addEdge(DirectedEdge(node7, node4, 0.37))
             node7.addEdge(DirectedEdge(node7, node5, 0.28))
+
+            return graph
+        }
+
+        // For directed graph cycle detection
+        fun getExampleGraph4(): EdgeWeightedDiGraph {
+
+            val graph = EdgeWeightedDiGraph()
+
+            val node1 = DiGraphNode(1)
+            val node2 = DiGraphNode(2)
+            val node4 = DiGraphNode(4)
+            val node5 = DiGraphNode(5)
+            val node6 = DiGraphNode(6)
+
+            graph.addNode(node1)
+            graph.addNode(node2)
+            graph.addNode(node4)
+            graph.addNode(node5)
+            graph.addNode(node6)
+
+            node1.addEdge(DirectedEdge(node1, node2, 1.0))
+
+            node4.addEdge(DirectedEdge(node4, node1, 1.0))
+            node4.addEdge(DirectedEdge(node4, node5, 1.0))
+
+            node5.addEdge(DirectedEdge(node5, node6, 1.0))
+
+            node6.addEdge(DirectedEdge(node6, node4, 1.0))
 
             return graph
         }
