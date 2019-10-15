@@ -109,5 +109,33 @@ class Graph {
 
             return graph
         }
+
+        fun getExampleGraph2(): Graph {
+
+            val node1 = GraphNode(1)
+            val node2 = GraphNode(2)
+            val node3 = GraphNode(3)
+            val node4 = GraphNode(4)
+
+            node1.addChild(node2)
+            node1.addChild(node4)
+
+            node2.addChild(node1)
+            //node2.addChild(node3)
+
+            //node3.addChild(node2)
+            node3.addChild(node4)
+
+            node4.addChild(node1)
+            node4.addChild(node3)
+
+            val graph = Graph()
+            graph.addNode(node1)
+            graph.addNode(node2)
+            graph.addNode(node3)
+            graph.addNode(node4)
+
+            return graph
+        }
     }
 }
