@@ -5,6 +5,11 @@ import trees.TreeNode
 
 class RootToLeafPathSum {
 /*
+
+Root to leaf paths sum
+
+https://practice.geeksforgeeks.org/problems/root-to-leaf-paths-sum/1
+
 Given a binary tree, where every node value is a number. Find the sum of all the numbers which are formed from root to leaf paths.
 
 For example consider the following Binary Tree.
