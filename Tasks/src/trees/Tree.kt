@@ -143,5 +143,30 @@ class Tree {
 
             return root
         }
+
+        public fun getExampleTree5(): TreeNode {
+/*
+           6
+         /   \
+        3     5
+      /   \     \
+     2     5     4
+         /  \
+        7    4
+*/
+            val root: TreeNode = TreeNode(6)
+            root.left = TreeNode(3)
+            root.right = TreeNode(5)
+
+            root.left?.left = TreeNode(2)
+            root.left?.right = TreeNode(5)
+
+            root.left?.right?.left = TreeNode(7)
+            root.left?.right?.right = TreeNode(4)
+
+            root.right?.right = TreeNode(4)
+
+            return root
+        }
     }
 }

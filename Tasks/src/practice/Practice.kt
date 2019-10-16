@@ -1,4 +1,4 @@
-package general
+package practice
 
 import trees.Tree
 import trees.TreeNode
@@ -63,10 +63,16 @@ class Practice {
         if (lRes?.node != null && rRes?.node != null) return Result(root, true)
 
         if (p == root || q == root) {
-            return if (lRes?.node != null || rRes?.node != null) Result(root, true) else Result(root, false)
+            return if (lRes?.node != null || rRes?.node != null) Result(
+                root,
+                true
+            ) else Result(root, false)
         }
 
-        return if (lRes?.node != null) Result(lRes?.node, false) else Result(rRes?.node, false)
+        return if (lRes?.node != null) Result(
+            lRes?.node,
+            false
+        ) else Result(rRes?.node, false)
     }
 
     private fun getNodeByVal(root: TreeNode?, value: Int): TreeNode? {
