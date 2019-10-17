@@ -5,7 +5,36 @@ import java.util.HashMap
 class Permutations {
 	
 	fun printAllPermutations() {
-		println(getPermutations("abc"))
+		val str = "aabc"
+
+		// Boxing overhead
+		val ar = str.toCharArray().toTypedArray()
+		val n = str.length
+		permute(ar, 0, n - 1)
+	}
+
+	private fun permute(ar: Array<Char>, startIndex: Int, endIndex: Int) {
+		if (startIndex == endIndex) {
+			ar.forEach { print("${it}") }
+			println()
+		}
+
+		for (i in startIndex..endIndex) {
+			if (startIndex == i || ar[startIndex] != ar[i]) {
+				swap(ar, startIndex, i)
+				permute(ar, startIndex + 1, endIndex)
+				swap(ar, startIndex, i)
+			}
+		}
+	}
+
+
+	private fun swap(ar: Array<Char>, i: Int, j: Int) {
+		if (i != j) {
+			val temp = ar[i]
+			ar[i] = ar[j]
+			ar[j] = temp
+		}
 	}
 	
 	private fun getPermutations(s: String): MutableList<String> {

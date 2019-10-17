@@ -1,3 +1,4 @@
+import combinatorics.Permutations
 import dynamic.LongestIncreasingSubsequence
 import graphs.*
 import numberTheory.ModuloExponentiation
@@ -7,5 +8,5 @@ import trees.LeftView
 
 fun main(args: Array<String>) {
 
-    ReplaceNodesInBinaryTree().calc()
+    Permutations().printAllPermutations()
 }
