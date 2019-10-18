@@ -8,5 +8,5 @@ import trees.LeftView
 
 fun main(args: Array<String>) {
 
-    Permutations().printAllPermutations()
+    TravellingSalesman().calc()
 }

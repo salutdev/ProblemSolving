@@ -5,7 +5,7 @@ import java.util.HashMap
 class Permutations {
 	
 	fun printAllPermutations() {
-		val str = "aabc"
+		val str = "abc"
 
 		// Boxing overhead
 		val ar = str.toCharArray().toTypedArray()
