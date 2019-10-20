@@ -1,3 +1,4 @@
+import combinatorics.NchooseK
 import combinatorics.Permutations
 import dynamic.LongestIncreasingSubsequence
 import graphs.*
@@ -8,5 +9,5 @@ import trees.LeftView
 
 fun main(args: Array<String>) {
 
-    TravellingSalesman().calc()
+    NchooseK().computePascalTriangle()
 }
