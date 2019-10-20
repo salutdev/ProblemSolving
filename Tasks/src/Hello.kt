@@ -9,5 +9,5 @@ import trees.LeftView
 
 fun main(args: Array<String>) {
 
-    NchooseK().computePascalTriangle()
+    NchooseK().printAllNchooseKCombinations()
 }

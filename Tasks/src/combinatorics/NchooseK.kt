@@ -44,4 +44,36 @@ class NchooseK {
 
     }
 
+    fun printAllNchooseKCombinations() {
+        val str = "abcdefgh"
+        val n = str.length
+        val k = 2
+        val chosen = Array<Boolean>(n) {false}
+        printAllCombinationsRec(n, k, chosen, str, 0)
+    }
+
+    private fun printAllCombinationsRec(n: Int, k: Int, chosen: Array<Boolean>, str: String, i: Int) {
+        if (k == 0 || n == k) {
+            chosen.forEachIndexed { index, value ->
+                if (value) {
+                    print("${str[index]}, ")
+                }
+            }
+
+            if (k != 0) {
+                for (j in i until n + i) {
+                    print("${str[j]}, ")
+                }
+            }
+            println()
+            return
+        }
+
+        chosen[i] = true
+        printAllCombinationsRec(n-1, k-1, chosen, str, i + 1)
+        chosen[i] = false
+
+        printAllCombinationsRec(n-1, k, chosen, str, i + 1)
+    }
+
 }
