@@ -2,9 +2,14 @@ package graphs
 
 class Graph {
     val nodes = ArrayList<GraphNode>()
+    val edges = ArrayList<Edge>()
 
     fun addNode(node: GraphNode) {
         nodes.add(node)
+    }
+
+    fun addEdge(edge: Edge) {
+        edges.add(edge)
     }
 
     companion object {
@@ -134,6 +139,50 @@ class Graph {
             graph.addNode(node2)
             graph.addNode(node3)
             graph.addNode(node4)
+
+            return graph
+        }
+
+        // For Kruskal, course from Prinston
+        fun getExampleGraph3(): Graph {
+
+            val node0 = GraphNode(0)
+            val node1 = GraphNode(1)
+            val node2 = GraphNode(2)
+            val node3 = GraphNode(3)
+            val node4 = GraphNode(4)
+            val node5 = GraphNode(5)
+            val node6 = GraphNode(6)
+            val node7 = GraphNode(7)
+
+
+            val graph = Graph()
+
+            graph.addNode(node0)
+            graph.addNode(node1)
+            graph.addNode(node2)
+            graph.addNode(node3)
+            graph.addNode(node4)
+            graph.addNode(node5)
+            graph.addNode(node6)
+            graph.addNode(node7)
+
+            graph.addEdge(Edge(node0, node2, 26))
+            graph.addEdge(Edge(node0, node4, 38))
+            graph.addEdge(Edge(node0, node6, 48))
+            graph.addEdge(Edge(node0, node7, 16))
+            graph.addEdge(Edge(node1, node2, 36))
+            graph.addEdge(Edge(node1, node3, 29))
+            graph.addEdge(Edge(node1, node5, 32))
+            graph.addEdge(Edge(node1, node7, 19))
+            graph.addEdge(Edge(node2, node3, 17))
+            graph.addEdge(Edge(node2, node6, 40))
+            graph.addEdge(Edge(node2, node7, 34))
+            graph.addEdge(Edge(node3, node6, 52))
+            graph.addEdge(Edge(node4, node5, 35))
+            graph.addEdge(Edge(node4, node6, 93))
+            graph.addEdge(Edge(node4, node7, 37))
+            graph.addEdge(Edge(node5, node7, 28))
 
             return graph
         }

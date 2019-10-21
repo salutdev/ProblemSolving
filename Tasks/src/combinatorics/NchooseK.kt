@@ -69,6 +69,8 @@ class NchooseK {
             return
         }
 
+        // 1st set - choose 1st element and then solve C(n-1, k-1)
+        // 2nd set - do not choose 1st element and then solve C(n-1, k)
         chosen[i] = true
         printAllCombinationsRec(n-1, k-1, chosen, str, i + 1)
         chosen[i] = false
