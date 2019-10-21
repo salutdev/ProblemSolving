@@ -1,4 +1,4 @@
-package general
+package arrays
 
 class MaxContiguousSum {
     fun find() {

@@ -1,3 +1,4 @@
+import arrays.MaxDiffBetween2Elements
 import combinatorics.NchooseK
 import combinatorics.Permutations
 import dynamic.LongestIncreasingSubsequence
@@ -10,5 +11,5 @@ import trees.LeftView
 
 fun main(args: Array<String>) {
 
-    Kruskal().calcMST()
+    MaxDiffBetween2Elements().calc()
 }
