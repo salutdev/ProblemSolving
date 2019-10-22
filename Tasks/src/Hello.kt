@@ -1,4 +1,5 @@
 import arrays.MaxDiffBetween2Elements
+import arrays.MaxProfitBuySellAtMostTwice
 import arrays.StockMultipleBuySell
 import combinatorics.NchooseK
 import combinatorics.Permutations
@@ -12,5 +13,5 @@ import trees.LeftView
 
 fun main(args: Array<String>) {
 
-    StockMultipleBuySell().calc()
+    MaxProfitBuySellAtMostTwice().calc()
 }
