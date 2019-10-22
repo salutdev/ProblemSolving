@@ -2,6 +2,11 @@ package arrays
 
 /*
 * Maximum difference between two elements such that larger element appears after the smaller number
+*
+* Alternative solution:
+* If we first find the difference between the adjacent elements of the array and store all differences
+* in an auxiliary array diff[] of size n-1. Now this problems turns into finding the
+* maximum contiguous sum subarray of this difference array.
 */
 class MaxDiffBetween2Elements {
     fun calc() {

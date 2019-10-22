@@ -1,4 +1,5 @@
 import arrays.MaxDiffBetween2Elements
+import arrays.StockMultipleBuySell
 import combinatorics.NchooseK
 import combinatorics.Permutations
 import dynamic.LongestIncreasingSubsequence
@@ -11,5 +12,5 @@ import trees.LeftView
 
 fun main(args: Array<String>) {
 
-    MaxDiffBetween2Elements().calc()
+    StockMultipleBuySell().calc()
 }
