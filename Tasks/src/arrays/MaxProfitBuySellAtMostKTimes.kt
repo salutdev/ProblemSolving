@@ -35,16 +35,36 @@ class MaxProfitBuySellAtMostKTimes {
             and sell at 80.
         */
 
-        val price = arrayOf(90, 80, 70, 60, 50)
-        val k = 1
+//        val price = arrayOf(90, 80, 70, 60, 50)
+//        val k = 1
         /*
                 K = 1
             Output:  0
             Not possible to earn.
         */
 
-        val result = calcNotOptimized(price, k)
+        val price = arrayOf(2, 5, 7, 1, 4, 3, 1, 3)
+        val k = 3
+        /*
+            Ouput: 10
+        */
+        val result = calcOptimized(price, k)
         println(result)
+    }
+
+    private fun calcOptimized(price: Array<Int>, k: Int): Int {
+        val n = price.size
+        val dp = Array(k + 1) {Array(n) {0}}
+
+        for (i in 1..k) {
+            var maxDiff = Int.MIN_VALUE
+            for (j in 1 until n) {
+                maxDiff = max(maxDiff, dp[i-1][j-1] - price[j-1])
+                dp[i][j] = max(dp[i][j-1], price[j] + maxDiff)
+            }
+        }
+
+        return dp[k][n-1]
     }
 
     private fun calcNotOptimized(price: Array<Int>, k: Int): Int {
