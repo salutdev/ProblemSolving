@@ -48,24 +48,24 @@ class Tree {
              *      / \
  			 *     1   3
              */
-            val root: TreeNode = TreeNode(44)
-            root.left = TreeNode(25)
-            root.right = TreeNode(58)
+            val root: TreeNode = TreeNode(20)
+            root.left = TreeNode(13)
+            root.right = TreeNode(44)
 
-//            root.left?.left = TreeNode(4)
-//            root.left?.right = TreeNode(17)
-//
-//            root.left?.left?.left = TreeNode(2)
-//            root.left?.left?.right = TreeNode(8)
-//
-//            root.left?.left?.left?.left = TreeNode(1)
-//            root.left?.left?.left?.right = TreeNode(3)
-//
-//            root.left?.right?.left = TreeNode(15)
-//            root.left?.right?.right = TreeNode(19)
-//
-//            root.right?.left = TreeNode(25)
-//            root.right?.right = TreeNode(58)
+            root.left?.left = TreeNode(4)
+            root.left?.right = TreeNode(17)
+
+            root.left?.left?.left = TreeNode(2)
+            root.left?.left?.right = TreeNode(8)
+
+            root.left?.left?.left?.left = TreeNode(1)
+            root.left?.left?.left?.right = TreeNode(3)
+
+            root.left?.right?.left = TreeNode(15)
+            root.left?.right?.right = TreeNode(19)
+
+            root.right?.left = TreeNode(25)
+            root.right?.right = TreeNode(58)
 
             return root
         }

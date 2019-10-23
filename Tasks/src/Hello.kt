@@ -1,6 +1,7 @@
 import arrays.MaxProfitBuySellAtMostKTimes
+import practice.NodeCountInRange
 
 fun main(args: Array<String>) {
 
-    MaxProfitBuySellAtMostKTimes().calc()
+    NodeCountInRange().calc()
 }
