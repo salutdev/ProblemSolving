@@ -2,6 +2,7 @@ package languageConstructions
 
 import java.util.*
 import kotlin.collections.HashMap
+import kotlin.collections.HashSet
 
 class Collections {
 
@@ -13,6 +14,8 @@ class Collections {
         val strs3 = arrayListOf<Int>()
         val strs4 = arrayListOf<String>("str1", "str2")         // mutable array
 
+        val ar1 = arrayOf(4, 2, 5, 7)
+        val ar2 = Array<Int>(4) {0}
     }
 
     fun queue() {
@@ -45,5 +48,10 @@ class Collections {
         map3["key3"] = "value3"
         map3.remove("key3")
         map3.clear()
+    }
+
+    fun hashSets() {
+        val hashset1 = hashSetOf<String>("string1", "string2")
+        val hashset2 = HashSet<String>()
     }
 }
