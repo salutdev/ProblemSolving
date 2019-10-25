@@ -19,6 +19,7 @@ class NchooseK {
         return calcNumberOfCombinationsRec(n-1, k-1) + calcNumberOfCombinationsRec(n-1, k)
     }
 
+    // DP version
     fun computePascalTriangle() {
         val n = 10
         val k = 2
