@@ -1,9 +1,6 @@
-import arrays.MaxProfitBuySellAtMostKTimes
-import dynamic.GridWalking
-import practice.Boggle
-import practice.NodeCountInRange
+import trees.IterativePreorderTraversal
 
 fun main(args: Array<String>) {
 
-    GridWalking().calc()
+    IterativePreorderTraversal().traverse()
 }
