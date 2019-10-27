@@ -1,7 +1,6 @@
-import trees.IterativePostorderTraversal
-import trees.IterativePreorderTraversal
+import trees.IterativePostorderTraversalWithOneStack
 
 fun main(args: Array<String>) {
 
-    IterativePostorderTraversal().traverse()
+    IterativePostorderTraversalWithOneStack().traverse()
 }
