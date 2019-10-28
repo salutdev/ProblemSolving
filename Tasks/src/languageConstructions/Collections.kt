@@ -50,8 +50,35 @@ class Collections {
         map3.clear()
     }
 
+    private fun hashMapExample(s: String): java.util.HashMap<Char, Int> {
+        val hashMap = hashMapOf<Char, Int>()
+
+        for (c in s) {
+            if (hashMap.containsKey(c)) {
+                hashMap[c] = hashMap[c]!! + 1
+            } else {
+                hashMap[c] = 1
+            }
+        }
+
+        return hashMap
+    }
+
     fun hashSets() {
         val hashset1 = hashSetOf<String>("string1", "string2")
         val hashset2 = HashSet<String>()
+    }
+
+    fun treeMap() {
+        val sortedMap = TreeMap<String, Int>()
+        val set = arrayOf("a", "a", "b", "c")
+
+        set.forEach { e ->
+            if (sortedMap.containsKey(e)) {
+                sortedMap[e] = sortedMap.get(e)!! + 1
+            } else {
+                sortedMap[e] = 1
+            }
+        }
     }
 }

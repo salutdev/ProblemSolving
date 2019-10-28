@@ -1,10 +1,51 @@
 package combinatorics
 
+import java.util.*
+
 class Subsets {
-	
-	fun printAllSubsets() {
+
+	fun printAllSubsetsWithDups() {
+		val set = arrayOf("a", "a", "b", "c")
+		val result = Array<String>(set.size) { "" }
+
+		val sortedMap = TreeMap<String, Int>()
+
+		set.forEach { e ->
+			if (sortedMap.containsKey(e)) {
+				sortedMap[e] = sortedMap[e]!! + 1
+			} else {
+				sortedMap[e] = 1
+			}
+		}
+
+		val keys: Array<String> = sortedMap.keys.toTypedArray()
+
+		val n = sortedMap.size
+
+		printAllSubsetsWithDupsRec(keys, sortedMap, result, 0, n, 0)
+	}
+
+	private fun printAllSubsetsWithDupsRec(keys: Array<String>, sortedMap: TreeMap<String, Int>, result: Array<String>, index: Int, n: Int, resultIndex: Int) {
+
+		for (i in index until n) {
+			val key = keys[i]
+			if (sortedMap[key]!! > 0) {
+				result[resultIndex] = key
+				println()
+				for (j in 0..resultIndex) {
+					print("${result[j]}")
+				}
+				sortedMap[key] = sortedMap[key]!! - 1
+				printAllSubsetsWithDupsRec(keys, sortedMap, result, i, n, resultIndex + 1)
+				sortedMap[key] = sortedMap[key]!! + 1
+			}
+		}
+	}
+
+
+	fun printAllSubsets2() {
 		
-		val set = listOf(1, 5, 7)
+		val set = listOf(1, 2, 7)
 		
 		val result: MutableList<MutableList<Int>> = getSubsets(set, set.size - 1)
 		for (list in result) {
@@ -33,7 +74,7 @@ class Subsets {
 	}
 	
 	
-	fun printAllSubsets2() {
+	fun printAllSubsets3() {
 		
 		val set: List<Int> = listOf(3, 6, 2)
 		
