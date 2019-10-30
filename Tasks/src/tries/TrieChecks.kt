@@ -7,13 +7,17 @@ class TrieChecks {
         trie.insert("abc")
         trie.insert("a")
         trie.insert("abcd")
+        trie.insert("adb")
+        trie.insert("day")
 
         var result = false
-        //result = trie.delete2("a")
-        //result = trie.delete2("a")
-        //result = trie.delete2("abc")
-        result = trie.delete("abcd")
+        result = trie.delete("a")
         result = trie.delete("abc")
+        result = trie.delete("abcd")
+        result = trie.delete("adb")
+        result = trie.delete("day")
+
+        trie.displayContent()
         println(result)
     }
 }

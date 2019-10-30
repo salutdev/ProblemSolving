@@ -12,6 +12,24 @@ class Trie {
     private var root = TrieNode()
     private  var shouldRemove = false
 
+    fun displayContent() {
+
+        displayContentRec(root, "")
+    }
+
+    fun displayContentRec(current: TrieNode, curStr: String) {
+
+        if (current == null) return
+        if (current.endOfWord) println(curStr)
+        if (current.children.size == 0) return
+
+
+        for (c in current.children.keys) {
+            val node = current.children[c]
+            displayContentRec(current.children[c]!!, curStr + c)
+        }
+    }
+
     fun insert(str: String) {
         var current: TrieNode? = root
 
