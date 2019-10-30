@@ -31,7 +31,7 @@ class Subsets {
 			val key = keys[i]
 			if (sortedMap[key]!! > 0) {
 				result[resultIndex] = key
-				println()
+				println() // prints initial empty set
 				for (j in 0..resultIndex) {
 					print("${result[j]}")
 				}
