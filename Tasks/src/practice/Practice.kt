@@ -4,8 +4,82 @@ import trees.Tree
 import trees.TreeNode
 import kotlin.math.abs
 import kotlin.math.max
+import kotlin.math.min
 
 class Practice {
+
+    fun commonAncestor2() {
+        var root = Tree.getExampleTree1()
+        val node1 = getNodeByVal(root, 4)
+        val node2 = getNodeByVal(root, 17)
+
+        val result = commonAncestorRec(root, node1, node2)
+
+    }
+
+    private fun commonAncestorRec(root: TreeNode?, p: TreeNode?, q: TreeNode?): Result {
+
+        if (root == null) return Result(null, false)
+        if (root == p && root == q) return Result(root, true)
+
+        val lResult = commonAncestorRec(root.left, p, q)
+        if (lResult != null && lResult.isAncestor) return lResult
+
+        val rResult = commonAncestorRec(root.right, p, q)
+        if (rResult != null && rResult.isAncestor) return rResult
+
+        if (lResult.node != null && rResult.node != null) return Result(root, true)
+
+        if (p == root || q == root) {
+            return if (lResult.node != null || rResult.node != null) Result(root, true)
+                   else Result(root, false)
+        }
+
+        return if (lResult.node != null)  Result(lResult.node, false)
+               else Result(rResult.node, false)
+    }
+
+    fun balancedCheck2() {
+        val root = Tree.getExampleTree6()
+        val result = balancedCheckRec2(root)
+        println(if (result != Int.MAX_VALUE) "Balanced" else "Not balanced")
+    }
+
+    private fun balancedCheckRec2(root: TreeNode?): Int {
+        if (root == null) return 0
+
+        val lHeight = balancedCheckRec2(root.left)
+        if (lHeight == Int.MAX_VALUE) return Int.MAX_VALUE
+
+        val rHeight = balancedCheckRec2(root.right)
+        if (rHeight == Int.MAX_VALUE) return Int.MAX_VALUE
+
+        if (abs(rHeight - lHeight) > 1) return Int.MAX_VALUE
+
+        return max(lHeight, rHeight) + 1
+    }
+
+    fun minHeightOfBinaryTree() {
+        val root = Tree.getExampleTree5()
+        println(minHeight(root))
+    }
+
+    private fun minHeight(root: TreeNode?): Int {
+
+        if (root == null) return -1
+        if (root.left == null && root.right == null) return 0
+
+        var lHeight = 0
+        var rHeight = 0
+        if (root.left == null) rHeight = minHeight(root.right)
+        else if (root.left == null) lHeight = minHeight(root.left)
+        else {
+            rHeight = minHeight(root.right)
+            lHeight = minHeight(root.left)
+        }
+
+        return min(lHeight, rHeight) + 1
+    }
 
     fun subset() {
         val array = arrayOf(4, 8, 12)

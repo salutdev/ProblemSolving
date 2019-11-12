@@ -6,7 +6,7 @@ import trees.TreeNode
 class NodeCountInRange {
 
     fun calc() {
-        val root = Tree.getExampleTree4()
+        val root = Tree.getExampleTree1()
         val min = 1
         val max = 19
 

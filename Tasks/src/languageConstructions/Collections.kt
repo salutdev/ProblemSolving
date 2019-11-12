@@ -1,5 +1,6 @@
 package languageConstructions
 
+import graphs.DiGraphNode
 import java.util.*
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet
@@ -33,6 +34,15 @@ class Collections {
         queue2.add(4)
     }
 
+
+    fun priorityQueue() {
+        val pq = PriorityQueue<DiGraphNode> { a, b -> if (a.distanceFromSource > b.distanceFromSource) 1 else if (a == b) 0 else -1 }
+        pq.add(null)
+
+        while (pq.isNotEmpty()) {
+            val node = pq.remove()
+        }
+    }
     fun maps() {
 
         val map1 = mapOf<String, String>()     // immutable map

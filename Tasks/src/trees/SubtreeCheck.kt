@@ -4,7 +4,7 @@ class SubtreeCheck {
 
     fun check() {
         val t1 = Tree.getExampleTree1()
-        val t2 = Tree.getExampleTree4()
+        val t2 = Tree.getExampleTree1()
 
         var result = false
         if (t2 == null) {
