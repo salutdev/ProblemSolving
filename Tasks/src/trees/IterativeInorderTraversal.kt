@@ -3,7 +3,29 @@ package trees
 import java.util.*
 
 class IterativeInorderTraversal {
+
+
+
     fun traverse() {
+        val root = Tree.getExampleTree1()
+        val stack = Stack<TreeNode>()
+
+        var current: TreeNode? = root
+
+        while(stack.isNotEmpty() || current != null) {
+
+            while (current != null) {
+                stack.push(current)
+                current = current.left
+            }
+
+            current = stack.pop()
+            print("${current.value}, ")
+            current = current.right
+        }
+    }
+
+    fun traverseCustom() {
         val root = Tree.getExampleTree5()
         val stack = Stack<TreeNode>()
 

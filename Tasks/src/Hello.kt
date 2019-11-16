@@ -11,5 +11,5 @@ import tries.TrieChecks
 
 fun main(args: Array<String>) {
 
-    MorrisInOrderTraversal().calc()
+    IterativeInorderTraversal().traverse()
 }
