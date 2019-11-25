@@ -2,11 +2,95 @@ package practice
 
 import trees.Tree
 import trees.TreeNode
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
 
 class Practice {
+
+    fun topologicalSort()
+    {
+        val adj = HashMap<Int, ArrayList<Int>>()
+        val stack = Stack<Int>()
+        val visited = Array<Boolean>(adj.keys.size) { false }
+        for (node in adj.keys) {
+            topologicalSortReversePostOrder(node, stack, adj, visited)
+        }
+    }
+
+    private fun topologicalSortReversePostOrder(node: Int,  stack: Stack<Int>, adj: HashMap<Int, ArrayList<Int>>, visited: Array<Boolean>) {
+
+        if (visited[node]) return
+        visited[node] = true
+
+        val children = adj[node]!!
+        for (child in children) {
+            topologicalSortReversePostOrder(child,  stack, adj, visited)
+        }
+
+        stack.add(node)
+    }
+
+    fun getMaxPathValue(): Int {
+        //val g = GetGraph()
+        //if (IsCyclePresent(g)) return Int.MAX_VALUE
+
+        val adj = HashMap<Int, ArrayList<Int>>()
+        val pathValues = HashMap<Char, Int>()
+        val pathValueResult = PathValueResult()
+
+        for (node in adj.keys) {
+            pathValueDfs(node, pathValues, adj, pathValueResult)
+        }
+
+        return 0
+    }
+
+    private fun pathValueDfs(node: Int, pathValues: HashMap<Char, Int>, adj: HashMap<Int, ArrayList<Int>>, pathValueResult: PathValueResult): Boolean {
+
+        // if ( node.status = Status.visited) return true
+        // if ( node.status = Status.visiting) return false // cycle
+        val char = getChar(node)
+        addChar(char, pathValues)
+        // node.status = Status.visiting
+        val children = adj[node]
+        if (children != null && children.count() != 0) {
+            for (child in children) {
+                pathValueDfs(child, pathValues, adj, pathValueResult)
+            }
+        } else {
+            pathValueResult.value = max(pathValueResult.value, pathValues.values.max()!!)
+            removeChar(char, pathValues)
+        }
+
+        // node.status = Status.visited
+        return true
+    }
+
+    private fun addChar(char: Char, pathValues: HashMap<Char, Int>) {
+        if (pathValues.containsKey(char)) {
+            pathValues[char] = pathValues[char]!! + 1
+        } else {
+            pathValues[char] = 1
+        }
+    }
+
+    class PathValueResult {
+        var value: Int = Int.MIN_VALUE
+    }
+
+    private fun removeChar(char: Char, pathValues: HashMap<Char, Int>) {
+        if (pathValues.containsKey(char)) {
+            pathValues[char] = pathValues[char]!! - 1
+        }
+    }
+
+    fun getChar(value: Int): Char {
+        return 'a'
+    }
 
     fun commonAncestor2() {
         var root = Tree.getExampleTree1()
