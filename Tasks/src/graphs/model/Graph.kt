@@ -1,4 +1,4 @@
-package graphs
+package graphs.model
 
 class Graph {
     val nodes = ArrayList<GraphNode>()

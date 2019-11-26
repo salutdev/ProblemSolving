@@ -1,5 +1,8 @@
 package graphs
 
+import graphs.model.DiGraphNode
+import graphs.model.EdgeWeightedDiGraph
+
 class CycleDetectionInDirectedGraph {
     fun calc() {
         val graph = EdgeWeightedDiGraph.getExampleGraph4()

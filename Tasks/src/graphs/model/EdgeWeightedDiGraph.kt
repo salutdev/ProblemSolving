@@ -1,4 +1,4 @@
-package graphs
+package graphs.model
 
 class EdgeWeightedDiGraph {
 

@@ -1,5 +1,8 @@
 package graphs
 
+import graphs.model.Graph
+import graphs.model.GraphNode
+
 class CycleDetectionInUndirectedGraph {
 
     fun calc() {

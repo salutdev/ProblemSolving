@@ -1,4 +1,4 @@
-package graphs
+package graphs.model
 
 class GraphNode(val value: Int) {
 

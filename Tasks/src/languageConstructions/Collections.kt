@@ -1,6 +1,6 @@
 package languageConstructions
 
-import graphs.DiGraphNode
+import graphs.model.DiGraphNode
 import java.util.*
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet

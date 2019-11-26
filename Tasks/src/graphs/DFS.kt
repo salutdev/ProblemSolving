@@ -1,5 +1,7 @@
 package graphs
 
+import graphs.model.Graph
+import graphs.model.GraphNode
 import java.util.*
 
 class DFS {

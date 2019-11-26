@@ -1,5 +1,7 @@
 package graphs
 
+import graphs.model.Edge
+import graphs.model.Graph
 import java.util.*
 import kotlin.collections.ArrayList
 

@@ -1,5 +1,7 @@
 package graphs
 
+import graphs.model.DiGraphNode
+import graphs.model.EdgeWeightedDiGraph
 import java.util.*
 
 class Prims {

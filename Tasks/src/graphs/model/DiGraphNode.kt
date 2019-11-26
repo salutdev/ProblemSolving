@@ -1,4 +1,4 @@
-package graphs
+package graphs.model
 
 class DiGraphNode(val value: Int) {
 
@@ -6,7 +6,7 @@ class DiGraphNode(val value: Int) {
     var lastEdgeWithShortestPath: DirectedEdge? = null
     var visited = false
 
-    var edges: ArrayList<DirectedEdge>? = null
+    var edges: ArrayList<DirectedEdge>? = ArrayList<DirectedEdge>()
 
     fun addEdge(edge: DirectedEdge) {
         if (edges == null) edges = arrayListOf<DirectedEdge>()
