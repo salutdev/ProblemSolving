@@ -26,11 +26,11 @@ class ReverseDiGraph {
 
         for (node in graph.nodes) {
             print("${node.value} -> ")
-            if (node.edges != null) {
-                for (edge in node.edges!!) {
-                    print("${edge.to?.value}, ")
-                }
+
+            for (edge in node.edges!!) {
+                print("${edge.to?.value}, ")
             }
+
             println()
         }
 

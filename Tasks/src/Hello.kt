@@ -3,6 +3,7 @@ import combinatorics.Subsets
 import dynamic.EggDropping
 import graphs.ReverseDiGraph
 import practice.Expressions
+import practice.LargestValuePathInDiGraph
 import practice.Practice
 import searchAndSort.MinHeap
 import trees.IterativeInorderTraversal
@@ -14,5 +15,5 @@ import tries.TrieChecks
 
 fun main(args: Array<String>) {
 
-    ReverseDiGraph().reverse()
+    LargestValuePathInDiGraph().calc()
 }
