@@ -15,5 +15,5 @@ import tries.TrieChecks
 
 fun main(args: Array<String>) {
 
-    LargestValuePathInDiGraph().calc()
+    Practice().getDistanceInNaryTree()
 }

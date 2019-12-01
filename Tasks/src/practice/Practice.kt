@@ -1,5 +1,8 @@
 package practice
 
+import com.sun.org.apache.xpath.internal.operations.Bool
+import trees.NaryTree
+import trees.NaryTreeNode
 import trees.Tree
 import trees.TreeNode
 import java.util.*
@@ -10,6 +13,61 @@ import kotlin.math.max
 import kotlin.math.min
 
 class Practice {
+
+    fun getDistanceInNaryTree() {
+        val root = NaryTree.getExampleTee()
+        val result = getDistance(root, 45, 11)
+
+        if (result != null && result.isResult) {
+            println("Distance: ${result.value}")
+        } else {
+            println("No result")
+        }
+    }
+
+    private fun getDistance(root: NaryTreeNode?, value1: Int, value2: Int): NaryResult? {
+        if (root == null) return NaryResult(0, false)
+        if (root.value == value1 && root.value == value2) return NaryResult(0, true)
+
+        var childResult: NaryResult? = null
+        var childResult1: NaryResult? = null
+        var childResult2: NaryResult? = null
+        if (root.children != null) {
+            for (child in root.children!!) {
+                childResult = getDistance(child, value1, value2)
+                if (childResult!!.isResult) return childResult
+                if (childResult != null && !childResult.isResult && childResult.value > 0) {
+                    if (childResult1 == null) {
+                        childResult1 = childResult
+                    } else {
+                        childResult2 = childResult
+                    }
+                }
+            }
+        }
+
+        if (childResult1 != null && childResult2 != null) {
+            return NaryResult(childResult1.value + childResult2.value, true)
+        }
+
+        if (root.value == value1 || root.value == value2) {
+            if (childResult1 != null) {
+                return NaryResult(childResult1.value, true)
+            } else {
+                return NaryResult(1, false)
+            }
+        }
+
+        if (childResult1 != null) {
+            childResult1.value++
+            return childResult1
+        }
+
+        return NaryResult(0, false)
+    }
+
+    class NaryResult (var value: Int, var isResult: Boolean)
+
 
     fun topologicalSort()
     {

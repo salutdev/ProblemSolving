@@ -32,8 +32,9 @@ class DijkstraSP {
                     childNode.distanceFromSource = node.distanceFromSource + e.weight
                     childNode.lastEdgeWithShortestPath = e
 
+                    // If node is on in pq decrease node value. Otherwise add node to priority queue
                     if (pq.contains(childNode)) {
-                        pq.remove(childNode)  // Reorder pq as key changes (doesn't automatically reoder qp when key changed)
+                        pq.remove(childNode)  // Reorder pq as key changes (doesn't automatically reorder qp when key changed)
                     }
                     pq.add(childNode)
                 }
