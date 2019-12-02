@@ -2,6 +2,7 @@ import combinatorics.Permutations
 import combinatorics.Subsets
 import dynamic.EggDropping
 import graphs.ReverseDiGraph
+import practice.BraceExpansion
 import practice.Expressions
 import practice.LargestValuePathInDiGraph
 import practice.Practice
@@ -15,5 +16,5 @@ import tries.TrieChecks
 
 fun main(args: Array<String>) {
 
-    Practice().getDistanceInNaryTree()
+    BraceExpansion().calc()
 }
