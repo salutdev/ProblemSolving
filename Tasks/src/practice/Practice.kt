@@ -15,6 +15,9 @@ import kotlin.math.min
 class Practice {
 
     fun getDistanceInNaryTree() {
+
+        val aa = intArrayOf(1, 2)
+
         val root = NaryTree.getExampleTee()
         val result = getDistance(root, 45, 11)
 

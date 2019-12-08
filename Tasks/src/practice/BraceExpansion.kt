@@ -19,7 +19,8 @@ class BraceExpansion {
         //val str = "abc{d,{e,f}}"
         //val str = "a{b,c{d,e}}"
         //val str = "a{b,c{d,e},{f,g}}"
-        val str = "a{b,c{d,e},{f,g}h{j,m{k,l}n}}"
+        //val str = "a{b,c{d,e},{f,g}h{j,m{k,l}n}}"
+        val str = "{a,b,c{x,y}}b{p,q}"
 
         val expressions = HashMap<Int, String>()
 

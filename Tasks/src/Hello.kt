@@ -6,6 +6,7 @@ import practice.BraceExpansion
 import practice.Expressions
 import practice.LargestValuePathInDiGraph
 import practice.Practice
+import practice.strings.RepeatedSubstringPattern
 import searchAndSort.MinHeap
 import trees.IterativeInorderTraversal
 import trees.IterativePostorderTraversalWithOneStack
@@ -16,5 +17,5 @@ import tries.TrieChecks
 
 fun main(args: Array<String>) {
 
-    BraceExpansion().calc()
+    RepeatedSubstringPattern().calc()
 }
