@@ -1,21 +1,6 @@
-import combinatorics.Permutations
-import combinatorics.Subsets
-import dynamic.EggDropping
-import graphs.ReverseDiGraph
-import practice.BraceExpansion
-import practice.Expressions
-import practice.LargestValuePathInDiGraph
-import practice.Practice
-import practice.strings.RepeatedSubstringPattern
-import searchAndSort.MinHeap
-import trees.IterativeInorderTraversal
-import trees.IterativePostorderTraversalWithOneStack
-import trees.MorrisInOrderTraversal
-import trees.SegmentsIntersections
-import tries.Trie
-import tries.TrieChecks
+import practice.trees.LongestUnivaluePath
 
 fun main(args: Array<String>) {
 
-    RepeatedSubstringPattern().calc()
+    LongestUnivaluePath().find()
 }

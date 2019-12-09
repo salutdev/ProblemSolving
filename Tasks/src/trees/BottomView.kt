@@ -1,5 +1,7 @@
 package trees
 
+import trees.model.Tree
+import trees.model.TreeNodeWithHd
 import java.util.*
 import kotlin.collections.HashMap
 

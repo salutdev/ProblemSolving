@@ -1,10 +1,9 @@
 package practice
 
-import com.sun.org.apache.xpath.internal.operations.Bool
-import trees.NaryTree
-import trees.NaryTreeNode
-import trees.Tree
-import trees.TreeNode
+import trees.model.NaryTree
+import trees.model.NaryTreeNode
+import trees.model.Tree
+import trees.model.TreeNode
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap

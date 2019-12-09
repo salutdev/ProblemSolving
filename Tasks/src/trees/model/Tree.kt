@@ -1,4 +1,4 @@
-package trees
+package trees.model
 
 class Tree {
 
@@ -155,6 +155,38 @@ class Tree {
 
             root.right?.left = TreeNode(6)
             root.right?.right = TreeNode(7)
+
+            return root
+        }
+
+        public fun getExampleTree7(): TreeNode {
+            /*                 3
+             *            /        \
+             *           3          3
+             *         /  \        /   \
+             *      3     3       3     55
+             *     / \   / \     /  \    / \
+             *    3   3 3   11  24  3  51  70
+             */
+            val root: TreeNode = TreeNode(3)
+            root.left = TreeNode(3)
+            root.right = TreeNode(3)
+
+            root.left?.left = TreeNode(3)
+            root.left?.right = TreeNode(3)
+
+            root.right?.left = TreeNode(3)
+            root.right?.right = TreeNode(55)
+
+            root.left?.left?.left = TreeNode(3)
+            root.left?.left?.right = TreeNode(3)
+            root.left?.right?.left = TreeNode(3)
+            root.left?.right?.right = TreeNode(11)
+
+            root.right?.left?.left = TreeNode(24)
+            root.right?.left?.right = TreeNode(3)
+            root.right?.right?.left = TreeNode(51)
+            root.right?.right?.right = TreeNode(70)
 
             return root
         }

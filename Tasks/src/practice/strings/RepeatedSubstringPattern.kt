@@ -28,7 +28,7 @@ class RepeatedSubstringPattern {
 
     }
 
-    fun shortSolution(s: String): Boolean {
+    private fun shortSolution(s: String): Boolean {
         val n = s.length
         val newStr = (s + s).substring(1, 2 * n - 1)
         return newStr.indexOf(s) != -1

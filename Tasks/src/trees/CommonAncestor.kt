@@ -1,5 +1,8 @@
 package trees
 
+import trees.model.Tree
+import trees.model.TreeNode
+
 class CommonAncestor {
 	
 	fun getAncestor() {

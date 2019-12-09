@@ -1,5 +1,7 @@
 package trees
 
+import trees.model.Tree
+import trees.model.TreeNode
 import java.util.*
 
 class IterativePostorderTraversalWithOneStack {

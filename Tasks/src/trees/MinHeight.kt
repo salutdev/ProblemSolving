@@ -1,6 +1,7 @@
 package trees
 
-import kotlin.math.max
+import trees.model.Tree
+import trees.model.TreeNode
 import kotlin.math.min
 
 class MinHeight {

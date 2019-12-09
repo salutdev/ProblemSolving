@@ -1,4 +1,4 @@
-package trees
+package trees.model
 
 class TreeNodeWithHd(val value: Int) {
     var hd: Int = 0

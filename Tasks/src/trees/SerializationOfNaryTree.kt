@@ -1,5 +1,8 @@
 package trees
 
+import trees.model.NaryTree
+import trees.model.NaryTreeNode
+
 class SerializationOfNaryTree {
     fun serialize() {
         val root = NaryTree.getExampleTee()

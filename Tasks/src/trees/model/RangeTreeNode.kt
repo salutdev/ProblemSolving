@@ -1,4 +1,4 @@
-package trees
+package trees.model
 
 class RangeTreeNode(var value: Int) {
     var rank: Int = 0

@@ -1,5 +1,6 @@
 package trees
 
+import trees.model.RangeTree
 import java.util.*
 
 // Given a set of horizontal and vertical line segments, find the number of squares formed by them?

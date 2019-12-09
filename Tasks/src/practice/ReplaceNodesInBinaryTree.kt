@@ -1,7 +1,7 @@
 package practice
 
-import trees.Tree
-import trees.TreeNode
+import trees.model.Tree
+import trees.model.TreeNode
 
 class ReplaceNodesInBinaryTree {
 
