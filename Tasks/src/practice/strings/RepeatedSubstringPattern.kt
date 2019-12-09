@@ -7,9 +7,10 @@ and its length will not exceed 10000.
 */
 
 class RepeatedSubstringPattern {
-    fun calc(): Boolean {
 
-        val s = "abacababacab"
+    fun calc() {
+
+//        val s = "abacababacab"
 //        val s = "aaaa"
 //        val s = "aabaaba"
 //        val s = "aabaab"
@@ -17,13 +18,30 @@ class RepeatedSubstringPattern {
 //        val s = "abcdabcdabcdabcd"
 //        val s = "abab"
 //        val s = "abac"
-//        val s = "abcd"
+        val s = "abcd"
+
+        var result = KMP(s)
+        println("KMP result = $result")
+
+        result = shortSolution(s)
+        println("ShortSolution result = $result")
+
+    }
+
+    fun shortSolution(s: String): Boolean {
+        val n = s.length
+        val newStr = (s + s).substring(1, 2 * n - 1)
+        return newStr.indexOf(s) != -1
+    }
+
+    // KMP solution
+    private fun KMP(s: String): Boolean {
 
         val n = s.length
         if (n in 0..1) return false
         var i = 0
         var j = 1
-        val ar = IntArray(n) {0}
+        val ar = IntArray(n)
         var matchStartPos = -1
 
         while (j < n) {
@@ -47,9 +65,6 @@ class RepeatedSubstringPattern {
             }
         }
 
-        val result = (i % matchStartPos == 0) && (i + matchStartPos == n)
-        println("result = $result")
-
-        return result
+        return (i % matchStartPos == 0) && (i + matchStartPos == n)
     }
 }

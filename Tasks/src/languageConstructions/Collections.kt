@@ -17,6 +17,32 @@ class Collections {
 
         val ar1 = arrayOf(4, 2, 5, 7)
         val ar2 = Array<Int>(4) {0}
+
+      /*  Array<Int> is an Integer[] under the hood, while IntArray is an int[].
+
+        This means that when Int is put in an Array<Int>, it will always be boxed
+        (specifically, with an Integer.valueOf() call). In the case of IntArray, no boxing
+        will occur, because it translates to a Java primitive array.
+
+
+        Primitive arrays can be left uninitialized and they will have default 0 values at all
+        indexes. This is why IntArray and the rest of the primitive arrays have constructors
+        that only take a size parameter:
+      */
+
+        val arr = IntArray(10)
+        println(arr.joinToString()) // 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+        val arr2 = Array<Int>(10) { index -> 0 }  // full, verbose syntax
+        val arr3 = Array(10) { 0 }                // concise version
+
+/*
+        Or create an Array<Int?> to avoid having to initialize every value, but then you'll
+        be later forced to deal with possible null values every time you read from the array.
+*/
+
+        val arr4 = arrayOfNulls<Int>(10)
+
     }
 
     fun queue() {
