@@ -1,8 +1,6 @@
-import practice.strings.LongPressedName
-import practice.strings.NumberOfLines
-import practice.trees.LongestUnivaluePath
+import practice.strings.StringEncoding
 
 fun main(args: Array<String>) {
 
-    NumberOfLines().calc()
+    StringEncoding().decode()
 }
