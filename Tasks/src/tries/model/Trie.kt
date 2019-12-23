@@ -1,6 +1,4 @@
-package tries
-
-import com.sun.org.apache.xpath.internal.operations.Bool
+package tries.model
 
 class Trie {
 

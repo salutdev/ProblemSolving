@@ -1,6 +1,9 @@
 import practice.strings.StringEncoding
+import tries.AutoCompleteWords
 
 fun main(args: Array<String>) {
 
-    StringEncoding().decode()
+    AutoCompleteWords().calc()
+
+
 }

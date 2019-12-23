@@ -1,5 +1,7 @@
 package tries
 
+import tries.model.Trie
+
 class TrieChecks {
 
     fun check() {
