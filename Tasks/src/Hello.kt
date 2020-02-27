@@ -1,9 +1,8 @@
-import practice.strings.StringEncoding
-import tries.AutoCompleteWords
+import practice.graphs.Update
 
 fun main(args: Array<String>) {
 
-    AutoCompleteWords().calc()
+    Update().calc()
 
 
 }

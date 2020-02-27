@@ -3,11 +3,30 @@ package tries
 import java.util.*
 import kotlin.collections.HashMap
 
+/*
+Having dictionary of words write method to return list of autocomplete words by entered words prefix.
+Min length of prefix is 2 letters. Return max 3 words for each prefix sorted alphabetically.
+
+Example:
+    dictionalry: "cbgdk", "cbgdf", "cbgdm", "cbgdz", "cbgr", "cbg", "cbb"
+    input prefix: "cbgd"
+
+    Auto complete words result:
+
+        cbb, cbg, cbgdf
+        cbg, cbgdf, cbgdk
+        cbgdf, cbgdk, cbgdm
+
+    Explanation:
+        first line is for prefix "cb" from input prefix
+        second line for "cdg"
+        third for "cbgd"
+ */
 class AutoCompleteWords {
 
     fun calc() {
-        val listOfWords = listOf("cbadk", "cbadf", "cbadm", "cbar", "cba")
-        val inputWord = "cbadk"
+        val listOfWords = listOf("cbgdk", "cbgdf", "cbgdm", "cbgdz", "cbgr", "cbg", "cbb")
+        val inputWord = "cbgd"
         val result = getAutocompleteWords(inputWord, listOfWords)
         result.forEach { l -> println(l.joinToString()) }
     }
