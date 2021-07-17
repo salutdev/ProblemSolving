@@ -25,19 +25,19 @@ Example:
 class AutoCompleteWords {
 
     fun calc() {
-        val listOfWords = listOf("cbgdk", "cbgdf", "cbgdm", "cbgdz", "cbgr", "cbg", "cbb")
+        val listOfWords = listOf("cbgdk", "cbgdf", "cbgdm", "cbgdz", "cbgr", "cbg", "cBB")
         val inputWord = "cbgd"
         val result = getAutocompleteWords(inputWord, listOfWords)
         result.forEach { l -> println(l.joinToString()) }
     }
 
-    fun getAutocompleteWords(inputWord: String, listOfWords: List<String>): List<List<String>> {
+    private fun getAutocompleteWords(inputWord: String, listOfWords: List<String>): List<List<String>> {
         if (inputWord == null || inputWord.length < 2) return listOf<List<String>>()
         val trie = Trie()
-        listOfWords.forEach { w -> trie.insert(w) }
+        listOfWords.forEach { w -> trie.insert(w.toLowerCase()) }
         val maxWords = 3
         val minPrefixLength = 2
-        return trie.getWordsStartingWithPrefix(inputWord, minPrefixLength, maxWords)
+        return trie.getWordsOptimized(inputWord, minPrefixLength, maxWords)
     }
 
 
@@ -66,6 +66,56 @@ class AutoCompleteWords {
             }
             current?.endOfWord = true;
         }
+
+        private var wordNumberToGet: Int = 0
+
+        fun getWordsOptimized(customerQuery: String, minPrefixLength: Int, maxWordCount: Int) : List<List<String>>
+        {
+            val result = mutableListOf<MutableList<String>>()
+            var node: TrieNode? = root
+            var prefix = String()
+
+            for (c in customerQuery)
+            {
+                var prefixWords = mutableListOf<String>()
+                wordNumberToGet = maxWordCount
+                prefix += c
+                if (node!!.children.containsKey(c))
+                {
+                    node = node.children[c]
+                }
+                else
+                {
+                    return result
+                }
+
+                if (prefix.length >= minPrefixLength)
+                {
+                    getPrefixWordsRec(node, prefix, prefixWords)
+                    result.add(prefixWords)
+                }
+            }
+
+            return result;
+        }
+
+        private fun getPrefixWordsRec(root: TrieNode?, prefix: String, wordList: MutableList<String>)
+        {
+            if (wordNumberToGet == 0) return
+
+            if (root!!.endOfWord)
+            {
+                wordList.add(prefix)
+                wordNumberToGet--
+                if (wordNumberToGet == 0) return
+            }
+
+            for (c in root.children.keys.sortedBy { c -> c })
+            {
+                getPrefixWordsRec(root.children[c], prefix + c, wordList)
+            }
+        }
+
 
         fun getWordsStartingWithPrefix(prefix: String, minPrefixLength: Int, maxWords: Int): List<List<String>> {
 
