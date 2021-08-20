@@ -18,6 +18,9 @@ class Collections {
         val ar1 = arrayOf(4, 2, 5, 7)
         val ar2 = Array<Int>(4) {0}
 
+        val ar3 = Array(m) { IntArray(n) }
+        val ar4 = Array(m) { IntArray(n) {0} }
+
       /*  Array<Int> is an Integer[] under the hood, while IntArray is an int[].
 
         This means that when Int is put in an Array<Int>, it will always be boxed
