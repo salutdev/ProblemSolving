@@ -12,6 +12,9 @@ class Collections {
         val strs1 = listOf<Int>()
         val strs2 = listOf("string1", "string2", "string3")      // immutable array
 
+        val result = mutableListOf<MutableList<Int>>()
+        var row: MutableList<Int>? = null
+
         val strs3 = arrayListOf<Int>()
         val strs4 = arrayListOf<String>("str1", "str2")         // mutable array
 
