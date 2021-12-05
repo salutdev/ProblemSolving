@@ -51,3 +51,6 @@ class Solution:
        
 
         return "".join(res)
+
+    def init2DArray(self):
+        dp = [[-1 for j in range(n+1)] for i in range(m)]
