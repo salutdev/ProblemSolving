@@ -68,11 +68,11 @@ class Collections {
 
 
     fun priorityQueue() {
-        val pq = PriorityQueue<DiGraphNode> { a, b -> if (a.distanceFromSource > b.distanceFromSource) 1 else if (a == b) 0 else -1 }
-        pq.add(null)
+        val minPq = PriorityQueue<DiGraphNode> { a, b -> if (a.distanceFromSource > b.distanceFromSource) 1 else if (a == b) 0 else -1 }
+        minPq.add(null)
 
-        while (pq.isNotEmpty()) {
-            val node = pq.remove()
+        while (minPq.isNotEmpty()) {
+            val node = minPq.remove()
         }
     }
     fun maps() {
