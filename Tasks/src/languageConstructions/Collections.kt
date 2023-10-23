@@ -21,6 +21,9 @@ class Collections {
         val ar1 = arrayOf(4, 2, 5, 7)
         val ar2 = Array<Int>(4) {0}
 
+        val m = 2
+        val n = 3
+
         val ar3 = Array(m) { IntArray(n) }
         val ar4 = Array(m) { IntArray(n) {0} }
 
@@ -90,6 +93,23 @@ class Collections {
         map3["key3"] = "value3"
         map3.remove("key3")
         map3.clear()
+
+
+        val map5 = mutableMapOf<String, Int?>()
+        println(map5.getOrPut("x") { 2 }) // 2
+        // subsequent calls to getOrPut do not evaluate the default value
+        // since the first getOrPut has already stored value 2 in the map
+        println(map5.getOrPut("x") { 3 }) // 2
+
+        val newVal = map5.getOrElse("x") {0}?.plus(1)
+
+        val map6 = mutableMapOf<String, Int>()
+        val newVal2 = map6.getOrElse("x") {0} + 1
+
+        map6.merge("you", 2, Int::plus)
+        map6.computeIfPresent("you"){ _, v -> v + 2 }
+        map6.putIfAbsent("key", 0)
+
     }
 
     private fun hashMapExample(s: String): java.util.HashMap<Char, Int> {
