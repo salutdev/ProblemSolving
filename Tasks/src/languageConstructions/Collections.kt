@@ -110,6 +110,32 @@ class Collections {
         map6.computeIfPresent("you"){ _, v -> v + 2 }
         map6.putIfAbsent("key", 0)
 
+        val map7 = mutableMapOf<Int, String>()
+       // Sets value "first" and returns null
+        val first = map7.putIfAbsent(1, "first")
+        // value won't be set and value "first" is returned
+        val second = map7.putIfAbsent(1, "second")
+
+
+        val map8 = mutableMapOf<Int, String?>()
+       // result of calculation is null, not added, returns null
+        val first = map8.computeIfAbsent(1) { key ->
+            null
+        }
+        // result of calculation is added, returns "1 second attempt"
+        val second = map8.computeIfAbsent(1) { key ->
+            "$key second attempt"
+        }
+        // value for the given key already exists, current value "1 second attempt" is returned
+        val third = map8.computeIfAbsent(1) { key ->
+            "$key third attempt"
+        }
+
+        
+        // [first, second]
+        val multiMap = mutableMapOf<Int, MutableSet<String>>()
+        multiMap.computeIfAbsent(1) { mutableSetOf() }.add("first")
+        multiMap.computeIfAbsent(1) { mutableSetOf() }.add("second")
     }
 
     private fun hashMapExample(s: String): java.util.HashMap<Char, Int> {
