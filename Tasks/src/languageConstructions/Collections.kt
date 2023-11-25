@@ -72,6 +72,7 @@ class Collections {
 
     fun priorityQueue() {
         val minPq = PriorityQueue<DiGraphNode> { a, b -> if (a.distanceFromSource > b.distanceFromSource) 1 else if (a == b) 0 else -1 }
+        val minHeap = PriorityQueue<Pair<Int, Int>> { a, b -> a.second - b.second }
         minPq.add(null)
 
         while (minPq.isNotEmpty()) {
@@ -131,7 +132,7 @@ class Collections {
             "$key third attempt"
         }
 
-        
+
         // [first, second]
         val multiMap = mutableMapOf<Int, MutableSet<String>>()
         multiMap.computeIfAbsent(1) { mutableSetOf() }.add("first")
