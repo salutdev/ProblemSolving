@@ -150,6 +150,9 @@ class Collections {
             }
         }
 
+        // Or shorter notation for update
+        hashMap[c] = hashMap.getOrDefault(c, 0) + 1
+
         return hashMap
     }
 
